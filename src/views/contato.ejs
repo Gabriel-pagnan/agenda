@@ -1,0 +1,56 @@
+<%- include('includes/head')%>
+<%- include('includes/navBar')%>
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <h1 class="text-center my-3">Contato</h1>
+            <p class="text-center lead">Crie ou edite seu contato</p>
+
+            <div class="col-lg-8 my-3 ms-5 ps-5">
+
+                <%- include('includes/messages')%>
+
+                <% if(contato._id) {%>
+                    <form action="/contato/edit/<%= contato._id %>" method="POST">
+                <% } else {%>
+                    <form action="/contato/register" method="POST"> 
+                <% } %>    
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    <div class="mb-3">
+                      <label class="mb-2 d-flex align-items-center">
+                        <span class="material-icons">
+                            person
+                        </span>  Nome</label>
+                      <input value="<%= contato.nome %>" type="text" class="form-control w-75" name="nome">
+                    </div>
+                    <div class="mb-3">
+                        <label class="mb-2 d-flex align-items-center">
+                            <span class="material-icons">
+                                person
+                            </span>  Sobrenome</label>
+                        <input value="<%= contato.sobrenome %>" type="text" class="form-control w-75" name="sobrenome">
+                    </div>
+                    <div class="mb-3">
+                        <label class="mb-2 d-flex align-items-center">
+                            <span class="material-icons">
+                                alternate_email
+                            </span> E-mail</label>
+                        <input value="<%= contato.email %>" type="email" class="form-control w-75" name="email">
+                    </div>
+                    <div class="mb-3">
+                        <label class="mb-2 d-flex align-items-center">
+                            <span class="material-icons">
+                                local_phone
+                            </span> Telefone</label>
+                        <input value="<%= contato.telefone %>" type="tel" class="form-control w-25" name="telefone">
+                    </div>
+                    <% if(contato._id) {%>
+                        <button type="submit" class="btn btn-primary my-3">Editar</button>
+                        <% } else {%>
+                            <button type="submit" class="btn btn-success my-3">Salvar</button>
+                    <% } %>  
+                  </form>
+            </div>
+        </div>
+    </div>
+<%- include('includes/footer')%>
+

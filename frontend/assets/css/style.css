@@ -1,0 +1,26 @@
+.material-icons.red{ color: rgba(255, 2, 2, 0.884); }
+.material-icons.blue{ color: rgba(12, 8, 248, 0.884); }
+.btnExcluir:hover{
+    transform: scale(1.2);
+    transition: 0.2s ease-in-out;
+}
+.btnEdit:hover{
+    transform: scale(1.2);
+    transition: 0.2s ease-in-out;
+}
+
+body{
+    background: #ebe6e673;
+}
+tr{
+    border: #7c7b7b4f;
+}
+td{
+    padding: 0;
+}
+
+.title{
+    color: rgba(128, 128, 128, 0.877);
+}
+
+.material-icons.addPerson { font-size: 48px;}

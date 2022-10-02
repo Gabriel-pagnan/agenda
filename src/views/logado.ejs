@@ -1,0 +1,25 @@
+<%- include('includes/head')%>
+<%- include('includes/navBar')%>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2"></div>
+
+            <div class="col-lg-8 my-3">
+                <h1 class="text-center mb-5">Olá <%= user.name%></h1>
+                <%- include('includes/messages') %>
+
+                <div class="d-flex align-items-center justify-content-center gap-5">
+                    <h3 class="title">Adicione algum contato</h3>
+                    <a class="add nav-link text-center text-dark" title="Adicionar" href="/contato/index">
+                        <span class="material-icons addPerson">
+                            person_add
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-2"></div>
+        </div>
+    </div>
+<%- include('includes/footer')%>
+
